@@ -21,6 +21,8 @@
      
 
      body {
+       content:"";
+       
        -webkit-user-select: none;
        /* Safari */
        -moz-user-select: none;
@@ -465,10 +467,30 @@
          opacity: 0.1;
        }
      }
+     
+     
+     #overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+      justify-content: center;
+      align-items: center;
+    }
+
+    #modal {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
    </style>
 
  <body>
-   
+ 
    <audio id="backgroundMusic" loop>
      <source src="https://raw.githubusercontent.com/AnonymousPlay3r/CURSED_CHRISTMAS/main/Milan Records USA - Cliff Martinez - ＂Are We Having A Party＂ (The Neon Demon OST).mp3"
      type="audio/mp3">
@@ -565,6 +587,12 @@
       " onclick="buttonTwo()">Retornar</button>
      <h1 style="color: #ffffff;text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;">Info</h1>
      <p style="color: #ffffff;text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000; text-align: justify; font-size:13pt; padding: 35px;">Esse website irá viver para sempre. Não há uma maneira de smplesmente removê-lo do WWW (Wide World Web). Então esse é um bom sinal de que vocês vão poder ler a hora que quiser e observar tudo o que for colocado aqui. <br><br> Bye.</p>
+     <button onclick="openModal()">Abrir</button>
+     <div id="overlay">
+       <p>Conteúdo protegido</p>
+       <button onclick="closeModal()">Fechar</button>
+       
+     </div>
 
 
    </div>
@@ -623,8 +651,8 @@
      var audio = document.getElementById("backgroundMusic");
      
      // Configura o volume máximo (de 0 a 1)
-     audio.volume = 0.8;
-     
+     audio.volume = 1;
+
      // Aguarda o primeiro clique na página para iniciar a reprodução
      document.addEventListener("click", function() {
        // Inicia a reprodução
@@ -633,7 +661,47 @@
        // Remove o ouvinte de evento para evitar reprodução contínua ao clicar novamente
        document.removeEventListener("click", arguments.callee);
      });
+     
+     
+     function openModal() {
+       document.getElementById("overlay").style.display = "flex";
+     }
+     
+     function closeModal() {
+       document.getElementById("overlay").style.display = "none";
+     }
+     
+     
+     // Função para obter o endereço IP do cliente
+  function getIpAddress(callback) {
+    fetch('https://api64.ipify.org?format=json')
+      .then(response => response.json())
+      .then(data => callback(data.ip))
+      .catch(error => console.error('Erro ao obter endereço IP:', error));
+  }
+
+     
+     // Função para armazenar o endereço IP no Local Storage
+     function storeIpAddress() {
+       getIpAddress(ip => {
+         // Recupera os endereços IP anteriores, se existirem
+         const storedIPs = JSON.parse(localStorage.getItem('storedIPs')) || [];
+     
+         // Adiciona o novo endereço IP
+         storedIPs.push(ip);
+     
+         // Armazena a lista atualizada no Local Storage
+         localStorage.setItem('storedIPs', JSON.stringify(storedIPs));
+     
+         console.log('Endereço IP armazenado no Local Storage:', ip);
+       });
+     }
+     
+     // Chama a função para armazenar o endereço IP
+     storeIpAddress();
    </script>
+   
+
 
 
    <!-- Project -->
