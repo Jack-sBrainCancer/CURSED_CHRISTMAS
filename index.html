@@ -469,8 +469,9 @@
 
  <body>
    <p class="ph" style="text-align: justify; font-size:13pt;">Um som para acompanhar sua leitura</p>
-   <audio controls autoplay>
-     <source src="https://raw.githubusercontent.com/AnonymousPlay3r/CURSED_CHRISTMAS/main/Milan Records USA - Cliff Martinez - ＂Are We Having A Party＂ (The Neon Demon OST).mp3" type="audio/mp3">
+   <audio id="backgroundMusic" loop>
+     <source src="https://raw.githubusercontent.com/AnonymousPlay3r/CURSED_CHRISTMAS/main/Milan Records USA - Cliff Martinez - ＂Are We Having A Party＂ (The Neon Demon OST).mp3"
+     type="audio/mp3">
    </audio> <br><br>
    <div style="text-align: center ">
      <span id="G">M</span>
@@ -617,6 +618,13 @@
          e.preventDefault();
        }
      });
+     
+     // Obtém o elemento de áudio
+     var audio = document.getElementById("backgroundMusic");
+     audio.volume = 0.8;
+     // Inicia a reprodução automática
+     audio.play();
+     
    </script>
 
 
