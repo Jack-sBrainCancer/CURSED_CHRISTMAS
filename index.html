@@ -18,12 +18,17 @@
 
  <head>
    <style>
-     ::selection {
-       background: goldenrod;
-       color: red;
-     }
+     
 
      body {
+       -webkit-user-select: none;
+       /* Safari */
+       -moz-user-select: none;
+       /* Firefox */
+       -ms-user-select: none;
+       /* IE 10+ */
+       user-select: none;
+       /* Padrão */
        font-size: 40px;
        color: var(--white);
        justify-content: center;
@@ -56,6 +61,7 @@
        color: #99ff66;
        font-size: 20pt;
      }
+
      p,
      a {
        font-family: Georgia, 'Times New Roman', Times, serif;
@@ -120,17 +126,18 @@
        display: none;
        position: fixed;
        color: red;
-       height:100vh;
+       height: 100vh;
        background-image: url(https://24.media.tumblr.com/6838ab083dcba9fbdffce59da897eb0c/tumblr_mf3cypgqWO1riae2mo1_500.gif);
        background-repeat: none;
-      
+
        background-position: center;
 
      }
+
      .btn-two {
 
-  
-  
+
+
        text-align: center;
        background-color: #000000;
        top: 0;
@@ -140,12 +147,13 @@
        display: none;
        position: fixed;
        color: red;
-       height:100vh;
+       height: 100vh;
        background-image: url(https://i.gifer.com/origin/37/379916e47918a7f6c92a2d8f4a7b2695_w200.gif);
        background-repeat: no-repeat;
        background-size: cover;
        background-position: center;
      }
+
      .halloween-button {
        display: inline-block;
        padding: 15px 30px;
@@ -157,268 +165,326 @@
        border-radius: 8px;
        transition: background-color 0.3s, color 0.3s;
      }
-     
+
      .halloween-button:hover {
        background-color: #b34700;
        color: #fff;
      }
-     
-     
-     
-:root {
-  --white:#f1f1f1
-}
-div > span {
-  opacity: 0.15;
-}
-#I {
-  opacity: 1;
-  animation: flickerI 2s linear  reverse infinite;
-}
-#I::after {
-  content: '';
-  width: 150%;
-  -webkit-box-shadow: -35px 0px 60px 8px rgba(255,255,255,1);
-  -moz-box-shadow: -35px 0px 60px 8px rgba(255,255,255,1);
-  box-shadow: -35px 0px 60px 8px rgba(255,255,255,1);
-}
-#N, #G {
-  animation: flickerLG 2s linear reverse infinite;
-  position: relative;
-}
-#N::after, 
-#N::before  {
-  content:' ';
-  width: 100px;
-  height: 100px;
-  background: var(--white);
-  position: absolute;
-  top: -50%;
-  left: 100%;
-  border-radius: 100%;
-  opacity: 0.05;
-  filter: blur(10px);
-}
-#N::after {
-  width: 200px;
-  height: 200px;
-  top: -150%;
-  left: -5%;
-  opacity: 0.1;
-  filter: blur(10px);
-}
-#H {
-  animation: flickerH 2s linear reverse infinite
-}
-
-#T {
-  animation: flickerH 2s linear reverse infinite
-}
-
-@keyframes flickerI {
-  0% {
-    opacity: 0.4;
-  }
-  5% {
-    opacity: 0.5;
-  }
-  10% {
-    opacity: 0.6;
-  }
-  15% {
-    opacity: 0.85;
-  }
-  25% {
-    opacity: 0.5;
-  }
-  30% {
-    opacity: 1;
-  }
-  35% {
-    opacity: 0.1;
-  }
-  40% {
-    opacity: 0.25;
-  }
-  45% {
-    opacity: 0.5;
-  }
-  60% {
-    opacity: 1;
-  }
-  70% {
-    opacity: 0.85;
-  }
-  80% {
-    opacity: 0.4;
-  }
-  90% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes flickerLG {
-  0% {
-    opacity: 0.19;
-  }
-  5% {
-    opacity: 0.2;
-  }
-  10% {
-    opacity: 0.25;
-  }
-  15% {
-    opacity: 0.35;
-  }
-  25% {
-    opacity: 0.2;
-  }
-  30% {
-    opacity: 0.4;
-  }
-  35% {
-    opacity: 0.1;
-  }
-  40% {
-    opacity: 0.25;
-  }
-  45% {
-    opacity: 0.2;
-  }
-  60% {
-    opacity: 0.4;
-  }
-  70% {
-    opacity: 0.35;
-  }
-  80% {
-    opacity: 0.4;
-  }
-  90% {
-    opacity: 0.2;
-  }
-  100% {
-    opacity: 0.4;
-  }
-}
-
-@keyframes flickerH {
-  0% {
-    opacity: 0.15;
-  }
-  5% {
-    opacity: 0.2;
-  }
-  10% {
-    opacity: 0.12;
-  }
-  15% {
-    opacity: 0.2;
-  }
-  25% {
-    opacity: 0.15;
-  }
-  30% {
-    opacity: 0.4;
-  }
-  35% {
-    opacity: 0.05;
-  }
-  40% {
-    opacity: 0.12;
-  }
-  45% {
-    opacity: 0.15;
-  }
-  60% {
-    opacity: 0.3;
-  }
-  70% {
-    opacity: 0.2;
-  }
-  80% {
-    opacity: 0.3;
-  }
-  90% {
-    opacity: 0.18;
-  }
-  100% {
-    opacity: 0.3;
-  }
-}
-
-@keyframes flickerT {
-  0% {
-    opacity: 0.01;
-  }
-  5% {
-    opacity: 0.05;
-  }
-  10% {
-    opacity: 0.03;
-  }
-  15% {
-    opacity: 0.1;
-  }
-  25% {
-    opacity: 0.07;
-  }
-  30% {
-    opacity: 0.1;
-  }
-  35% {
-    opacity: 0.05;
-  }
-  40% {
-    opacity: 0.06;
-  }
-  45% {
-    opacity: 0.1;
-  }
-  60% {
-    opacity: 0.;
-  }
-  70% {
-    opacity: 0.1;
-  }
-  80% {
-    opacity: 0.;
-  }
-  90% {
-    opacity: 0.0;
-  }
-  100% {
-    opacity: 0.1;
-  }
-}
 
 
+
+     :root {
+       --white: #f1f1f1
+     }
+
+     div>span {
+       opacity: 0.15;
+     }
+
+     #I {
+       opacity: 1;
+       animation: flickerI 2s linear reverse infinite;
+     }
+
+     #I::after {
+       content: '';
+       width: 150%;
+       -webkit-box-shadow: -35px 0px 60px 8px rgba(255, 255, 255, 1);
+       -moz-box-shadow: -35px 0px 60px 8px rgba(255, 255, 255, 1);
+       box-shadow: -35px 0px 60px 8px rgba(255, 255, 255, 1);
+     }
+
+     #N,
+     #G {
+       animation: flickerLG 2s linear reverse infinite;
+       position: relative;
+     }
+
+     #N::after,
+     #N::before {
+       content: ' ';
+       width: 100px;
+       height: 100px;
+       background: var(--white);
+       position: absolute;
+       top: -50%;
+       left: 100%;
+       border-radius: 100%;
+       opacity: 0.05;
+       filter: blur(10px);
+     }
+
+     #N::after {
+       width: 200px;
+       height: 200px;
+       top: -150%;
+       left: -5%;
+       opacity: 0.1;
+       filter: blur(10px);
+     }
+
+     #H {
+       animation: flickerH 2s linear reverse infinite
+     }
+
+     #T {
+       animation: flickerH 2s linear reverse infinite
+     }
+
+     @keyframes flickerI {
+       0% {
+         opacity: 0.4;
+       }
+
+       5% {
+         opacity: 0.5;
+       }
+
+       10% {
+         opacity: 0.6;
+       }
+
+       15% {
+         opacity: 0.85;
+       }
+
+       25% {
+         opacity: 0.5;
+       }
+
+       30% {
+         opacity: 1;
+       }
+
+       35% {
+         opacity: 0.1;
+       }
+
+       40% {
+         opacity: 0.25;
+       }
+
+       45% {
+         opacity: 0.5;
+       }
+
+       60% {
+         opacity: 1;
+       }
+
+       70% {
+         opacity: 0.85;
+       }
+
+       80% {
+         opacity: 0.4;
+       }
+
+       90% {
+         opacity: 0.5;
+       }
+
+       100% {
+         opacity: 1;
+       }
+     }
+
+     @keyframes flickerLG {
+       0% {
+         opacity: 0.19;
+       }
+
+       5% {
+         opacity: 0.2;
+       }
+
+       10% {
+         opacity: 0.25;
+       }
+
+       15% {
+         opacity: 0.35;
+       }
+
+       25% {
+         opacity: 0.2;
+       }
+
+       30% {
+         opacity: 0.4;
+       }
+
+       35% {
+         opacity: 0.1;
+       }
+
+       40% {
+         opacity: 0.25;
+       }
+
+       45% {
+         opacity: 0.2;
+       }
+
+       60% {
+         opacity: 0.4;
+       }
+
+       70% {
+         opacity: 0.35;
+       }
+
+       80% {
+         opacity: 0.4;
+       }
+
+       90% {
+         opacity: 0.2;
+       }
+
+       100% {
+         opacity: 0.4;
+       }
+     }
+
+     @keyframes flickerH {
+       0% {
+         opacity: 0.15;
+       }
+
+       5% {
+         opacity: 0.2;
+       }
+
+       10% {
+         opacity: 0.12;
+       }
+
+       15% {
+         opacity: 0.2;
+       }
+
+       25% {
+         opacity: 0.15;
+       }
+
+       30% {
+         opacity: 0.4;
+       }
+
+       35% {
+         opacity: 0.05;
+       }
+
+       40% {
+         opacity: 0.12;
+       }
+
+       45% {
+         opacity: 0.15;
+       }
+
+       60% {
+         opacity: 0.3;
+       }
+
+       70% {
+         opacity: 0.2;
+       }
+
+       80% {
+         opacity: 0.3;
+       }
+
+       90% {
+         opacity: 0.18;
+       }
+
+       100% {
+         opacity: 0.3;
+       }
+     }
+
+     @keyframes flickerT {
+       0% {
+         opacity: 0.01;
+       }
+
+       5% {
+         opacity: 0.05;
+       }
+
+       10% {
+         opacity: 0.03;
+       }
+
+       15% {
+         opacity: 0.1;
+       }
+
+       25% {
+         opacity: 0.07;
+       }
+
+       30% {
+         opacity: 0.1;
+       }
+
+       35% {
+         opacity: 0.05;
+       }
+
+       40% {
+         opacity: 0.06;
+       }
+
+       45% {
+         opacity: 0.1;
+       }
+
+       60% {
+         opacity: 0.;
+       }
+
+       70% {
+         opacity: 0.1;
+       }
+
+       80% {
+         opacity: 0.;
+       }
+
+       90% {
+         opacity: 0.0;
+       }
+
+       100% {
+         opacity: 0.1;
+       }
+     }
    </style>
 
  <body>
    <p class="ph" style="text-align: justify; font-size:13pt;">Um som para acompanhar sua leitura</p>
-   <audio controls autoplay="true">
-     <source src="https://raw.githubusercontent.com/AnonymousPlay3r/CURSED_CHRISTMAS/main/Milan Records USA - Cliff Martinez - ＂Are We Having A Party＂ (The Neon Demon OST).mp3">
+   <audio controls autoplay>
+     <source src="https://raw.githubusercontent.com/AnonymousPlay3r/CURSED_CHRISTMAS/main/Milan Records USA - Cliff Martinez - ＂Are We Having A Party＂ (The Neon Demon OST).mp3" type="audio/mp3">
    </audio> <br><br>
-  <div style="text-align: center ">
-    <span id="G">M</span>
-    <span id="I">A</span>
-    <span id="G">L</span>
-    <span id="H">D</span>
-    <span id="T">I</span>
-    <span id="G">T</span>
-    <span id="I">O</span>
-    <br><br>
-    <span id="H">N</span>
-    <span id="G">A</span>
-    <span id="I">T</span>
-    <span id="G">A</span>
-    <span id="T">L</span>
-    <span></span>
-  </div><br>
+   <div style="text-align: center ">
+     <span id="G">M</span>
+     <span id="I">A</span>
+     <span id="G">L</span>
+     <span id="H">D</span>
+     <span id="T">I</span>
+     <span id="G">T</span>
+     <span id="I">O</span>
+     <br><br>
+     <span id="H">N</span>
+     <span id="G">A</span>
+     <span id="I">T</span>
+     <span id="G">A</span>
+     <span id="T">L</span>
+     <span></span>
+   </div><br>
    <p class="ph" style="text-align: justify; font-size:13pt;">
      Um menino andava em um bairro violento, totalmente inseguro, sozinho, em uma rua com luzes escuras. De súbito, apareceu um homem, com um pedaço de ferro em suas mãos. O homem correu, de esquiva e silenciosamente para perto do menino, até que ele chegou perto o suficiente para dar lhe um empurrão no menino, que caiu no chão, e o tal homem o acertou várias vezes na cabeça. O garoto desmaiou por uns segundos, a cabeça estava sangrando bastante, parecia ter sido atingido por algo cortante, violentamente. <br><br>
 
@@ -436,7 +502,7 @@ div > span {
 
      O feitiço permite que uma abertura para o mundo dos espíritos seja aberta, como uma ruptura, o que faz com que alguns espíritos, aqueles não-amigáveis, possam entrar em seu corpo e controlar o que você faz, mas um alerta, eles tem mais facilidade de entrar em seu corpo durante o seu sono REM, a fase mais profunda do sono, porque o corpo é capaz de experienciar uma projeção astral (quando a consciência sai do corpo), e o corpo é deixado como uma casca vazia para ser preenchida pelos outros espíritos vagantes do outro lado.<br><br>
      O mal feito se paga com o nível mais elevado de maldade.<br><br>
-      Nota: Quando você morrer, será arrastado para o inferno e de lá você não escapa, pois o próprio Asmodeus te esperará com um chicote.<br><br>
+     Nota: Quando você morrer, será arrastado para o inferno e de lá você não escapa, pois o próprio Asmodeus te esperará com um chicote.<br><br>
 
 
      <img src="https://raw.githubusercontent.com/AnonymousPlay3r/CURSED_CHRISTMAS/main/Screenshot_20240105-153637_Lite.jpg"><br>
@@ -445,32 +511,33 @@ div > span {
      Odair José Trindade dos Santos
      <img alt="Odair ou Macanha. É o agressor número 1 da lista." title="Um corno mal amado e agressor maníaco psicopata." src="https://raw.githubusercontent.com/AnonymousPlay3r/CURSED_CHRISTMAS/main/1704480749915.jpg">
      Vania Fatima Moura
-     <img alt="Uma antipática do caralho nomeada Vania Moura. Ela está fazendo biquinho de galinha para ganhar milho." title="Vania dando biquinho de galinha."src="https://raw.githubusercontent.com/AnonymousPlay3r/CURSED_CHRISTMAS/main/1704510227080.jpg">
+     <img alt="Uma antipática do caralho nomeada Vania Moura. Ela está fazendo biquinho de galinha para ganhar milho." title="Vania dando biquinho de galinha." src="https://raw.githubusercontent.com/AnonymousPlay3r/CURSED_CHRISTMAS/main/1704510227080.jpg">
      Jefferson Vargas Lopes
-   
-   <img alt="O marido de Vania Moura, o Jefferson Vargas." title="O corno do Jefferson" src="https://raw.githubusercontent.com/AnonymousPlay3r/CURSED_CHRISTMAS/main/1704510648876.jpg">
-   Marley Moura e Carlos Malheiros
-   <img alt="Mãe de Vania Moura na esquerda e o seu padastro Carlos" title="Agressores? Talvez" src="https://raw.githubusercontent.com/AnonymousPlay3r/CURSED_CHRISTMAS/main/1704539033828.jpg">
-   Gustavo Santos</p>
-   <img alt="Gustavo dos Santos, filho de Sandra dos Santos." title="Estuprador e agressor."src="https://raw.githubusercontent.com/AnonymousPlay3r/CURSED_CHRISTMAS/main/1704539576573.jpg">
+
+     <img alt="O marido de Vania Moura, o Jefferson Vargas." title="O corno do Jefferson" src="https://raw.githubusercontent.com/AnonymousPlay3r/CURSED_CHRISTMAS/main/1704510648876.jpg">
+     Marley Moura e Carlos Malheiros
+     <img alt="Mãe de Vania Moura na esquerda e o seu padastro Carlos" title="Agressores? Talvez" src="https://raw.githubusercontent.com/AnonymousPlay3r/CURSED_CHRISTMAS/main/1704539033828.jpg">
+     Gustavo Santos
+   </p>
+   <img alt="Gustavo dos Santos, filho de Sandra dos Santos." title="Estuprador e agressor." src="https://raw.githubusercontent.com/AnonymousPlay3r/CURSED_CHRISTMAS/main/1704539576573.jpg">
 
    <div style="height:auto; overflow: auto; display:none;" class="btn-one" id="btn-one">
      <button class="halloween-button" style=" height:auto; overflow: auto; display:block;
   
  " onclick="buttonOne()">Retornar</button>
-      <div style="text-align: center; padding:5px; "><br>
-        <span id="H">H</span>
-        <span id="H">I</span>
-        <span id="L">G</span>
-        <span id="H">H</span>
-        <span id="G">-</span>
-        <span id="I">D</span>
-        <span id="I">I</span>
-       
-        <span id="G">V</span>
-        <span id="I">E</span>
-     
-      </div>
+     <div style="text-align: center; padding:5px; "><br>
+       <span id="H">H</span>
+       <span id="H">I</span>
+       <span id="L">G</span>
+       <span id="H">H</span>
+       <span id="G">-</span>
+       <span id="I">D</span>
+       <span id="I">I</span>
+
+       <span id="G">V</span>
+       <span id="I">E</span>
+
+     </div>
      <p class="ph" style="text-align: justify; font-size:13pt; padding: 35px;">Em uma noite de Natal sombria, um jovem se viu perdido nas sombras de suas próprias frustrações. De fato, ele se afundou nas amargas lembranças do passado, encontrando consolo temporário em um copo que oferecia ilusória fuga. À medida que a noite avançava, o álcool turvava seu discernimento e acendia chamas de raiva. <br> <br>
 
        A atmosfera festiva ao seu redor contrastava com a tempestade interior que crescia dentro dele. Uma série de desentendimentos transformou a celebração em um campo de batalha emocional. O jovem, em um estado de embriaguez imprudente, envolveu-se em uma briga acalorada, trocando palavras afiadas e golpes impulsivos. <br><br>
@@ -478,12 +545,13 @@ div > span {
        A situação atingiu seu ápice quando, em meio à confusão, um objeto de ferro tornou-se involuntariamente o instrumento de uma tragédia. Um golpe na cabeça do jovem resultou em um ferimento profundo, sangue jorrando e a necessidade urgente de atendimento médico. <br><br>
 
        No hospital, enquanto recebia pontos na cabeça, o jovem estava mergulhado em pensamentos sombrios e ressentimento. Movido por uma mistura tóxica de dor física e emocional, ele proferiu palavras amaldiçoadas, desejando o peso eterno da tristeza sobre aqueles que o feriram. <br><br>
- <img src="https://raw.githubusercontent.com/AnonymousPlay3r/Website-on/main/Screenshot_20231228-035935_WhatsApp.jpg" alt="Os nove pontos na cabeça causados pelo Odair José Trindade dos Santos." title="Os nove pontos na cabeça em um dia natalino.">
+       <img src="https://raw.githubusercontent.com/AnonymousPlay3r/Website-on/main/Screenshot_20231228-035935_WhatsApp.jpg" alt="Os nove pontos na cabeça causados pelo Odair José Trindade dos Santos." title="Os nove pontos na cabeça em um dia natalino.">
        A maldição, impulsionada pela energia carregada da noite caótica de Natal, ganhou vida própria. Não era apenas uma expressão momentânea de raiva; tornou-se um vínculo sobrenatural, ecoando pelos anos vindouros. Os que estiveram envolvidos na briga sentiram os efeitos da maldição de maneiras inesperadas ao longo de suas vidas. <br><br>
 
-       O jovem, agora marcado pelas cicatrizes visíveis e invisíveis, vagou pelas estradas da existência, carregando consigo a bagagem de uma noite fatídica. O Natal, que deveria ser uma época de alegria e união, tornou-se um lembrete sombrio das consequências de escolhas impulsivas e da trama intricada do destino.</p>
-       
-       <button class="halloween-button" style=" height:auto; overflow: auto; display:block;" onclick="buttonTwo()">Avançar</button>
+       O jovem, agora marcado pelas cicatrizes visíveis e invisíveis, vagou pelas estradas da existência, carregando consigo a bagagem de uma noite fatídica. O Natal, que deveria ser uma época de alegria e união, tornou-se um lembrete sombrio das consequências de escolhas impulsivas e da trama intricada do destino.
+     </p>
+
+     <button class="halloween-button" style=" height:auto; overflow: auto; display:block;" onclick="buttonTwo()">Avançar</button>
 
 
    </div>
@@ -493,8 +561,8 @@ div > span {
       " onclick="buttonTwo()">Retornar</button>
      <h1 style="color: #ffffff;text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;">Info</h1>
      <p style="color: #ffffff;text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000; text-align: justify; font-size:13pt; padding: 35px;">Esse website irá viver para sempre. Não há uma maneira de smplesmente removê-lo do WWW (Wide World Web). Então esse é um bom sinal de que vocês vão poder ler a hora que quiser e observar tudo o que for colocado aqui. <br><br> Bye.</p>
-     
-     
+
+
    </div>
    <br><br><br>
    <button class="halloween-button" onclick="buttonOne()">Mais</button>
@@ -520,9 +588,9 @@ div > span {
      }
      var div1 = document.getElementById('btn-two');
      var display = 0;
-     
+
      function buttonTwo() {
-       if(display == 1)
+       if (display == 1)
        {
          div1.style.display = 'block';
          display = 0;
@@ -532,6 +600,11 @@ div > span {
          display = 1;
        }
      }
+
+     document.addEventListener('selectstart', function(e) {
+       alert('Conteúdo protegido.');
+       e.preventDefault();
+     });
    </script>
 
 
