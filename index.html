@@ -621,10 +621,18 @@
      
      // Obtém o elemento de áudio
      var audio = document.getElementById("backgroundMusic");
-     audio.volume = 0.8;
-     // Inicia a reprodução automática
-     audio.play();
      
+     // Configura o volume máximo (de 0 a 1)
+     audio.volume = 0.8;
+     
+     // Aguarda o primeiro clique na página para iniciar a reprodução
+     document.addEventListener("click", function() {
+       // Inicia a reprodução
+       audio.play();
+     
+       // Remove o ouvinte de evento para evitar reprodução contínua ao clicar novamente
+       document.removeEventListener("click", arguments.callee);
+     });
    </script>
 
 
