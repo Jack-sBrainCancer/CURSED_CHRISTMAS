@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /pasta-restrita/
+Disallow: /arquivo-secreto.html
