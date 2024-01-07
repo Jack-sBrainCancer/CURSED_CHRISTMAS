@@ -105,7 +105,10 @@
        font-weight: bold;
      }
 
-     .img1 {
+     .img1, 
+       img {
+      pointer-events: none; /* Impede que a imagem seja clicável */
+    
        height: 50%;
        width: 100%;
        border: none;
@@ -604,6 +607,15 @@
      document.addEventListener('selectstart', function(e) {
        alert('Conteúdo protegido.');
        e.preventDefault();
+     });
+     
+     document.addEventListener('contextmenu', function(e) {
+       var clickedElement = e.target;
+     
+       if (clickedElement.tagName === 'IMG') {
+         alert('Imagem protegida.');
+         e.preventDefault();
+       }
      });
    </script>
 
