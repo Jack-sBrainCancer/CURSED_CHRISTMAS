@@ -151,7 +151,7 @@
        left: 0;
        display: none;
        position: fixed;
-       color: red;
+       color: #000000;
        height: 100vh;
        background-image: url(https://i.gifer.com/origin/37/379916e47918a7f6c92a2d8f4a7b2695_w200.gif);
        background-repeat: no-repeat;
@@ -159,7 +159,8 @@
        background-position: center;
      }
 .btn-three {
-  
+  align-content: justify;
+  text-align: center;
   background-color: #000000;
   top: 0;
   right: 0;
@@ -167,13 +168,14 @@
   left: 0;
   display: none;
   position: fixed;
-  text-align: justify;
+  height:100vh;
   background-image: url(https://media.tenor.com/RWJlrcyxAvgAAAAC/makiplays-retrowave.gif);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   }
      .halloween-button {
+       text-align: center;
        display: inline-block;
        padding: 15px 30px;
        font-size: 16px;
@@ -545,7 +547,7 @@ O começo do site pode ter sido um tanto sombrio, mas não era esse o objetivo i
   <button class="halloween-button" style=" height:auto; color: white; overflow: auto; display:block;
        " onclick="buttonThree()">Retornar</button>
  
-  <p class="ph">
+  <p style="text-align: justify;" class="ph">
     
     
 
@@ -568,11 +570,18 @@ O começo do site pode ter sido um tanto sombrio, mas não era esse o objetivo i
 
 
 </div>
-   <div style="height:auto; overflow: auto; display:none;" class="btn-one" id="btn-one">
-     <button class="halloween-button" style=" height:auto; overflow: auto; display:block;
-  
- " onclick="buttonOne()">Retornar</button>
-     <div style="tex t-align: center; padding:5px; "><br>
+   <div 
+   style="font-size: 13pt; height:auto; overflow: auto; display:none; padding: 30px;" class="btn-one" id="btn-one" > <br>
+       <button 
+     class="halloween-button" style=" height:auto; color: white; overflow: auto; display:block;
+     "
+     
+     
+     
+     onclick="buttonOne()">Retornar</button>
+    
+ 
+     <div style="text-align: center; padding:5px; font-size: 40px;"><br>
        <span id="H">H</span>
        <span id="H">I</span>
        <span id="L">G</span>
@@ -603,16 +612,22 @@ O começo do site pode ter sido um tanto sombrio, mas não era esse o objetivo i
 
 
    </div>
-   <div class="btn-two" id="btn-two">
+   <div style="font-size: 13pt; height:auto; overflow: auto; display:none; padding: 30px;" class="btn-two" id="btn-two">
      <button class="halloween-button" style="height:auto; overflow: auto; display:block;
        
       " onclick="buttonTwo()">Retornar</button>
-     <h1 style="color: #ffffff;text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;">Info</h1>
+    
+     <div style="text-align: center; padding:5px; font-size: 40px;"><br>
+       <span id="G">I</span>
+       <span id="I">N</span>
+       <span id="I">F</span>
+       <span id="G">O</span>
+       </div>
      <p style="color: #ffffff;text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000; text-align: justify; font-size:13pt; padding: 35px;">Esse website irá viver para sempre. Não há uma maneira de smplesmente removê-lo do WWW (Wide World Web). Então esse é um bom sinal de que vocês vão poder ler a hora que quiser e observar tudo o que for colocado aqui. <br><br> Bye.</p>
-     <button onclick="openModal()">Abrir</button>
+     <button class="halloween-button"onclick="openModal()">Abrir</button>
      <div id="overlay">
-       <p>Conteúdo protegido</p>
-       <button onclick="closeModal()">Fechar</button>
+       <p style="color: #ffffff;">CONTEÚDO PROTEGIDO</p><br><br>
+       <button class="halloween-button" onclick="closeModal()">Fechar</button>
        
      </div>
 
