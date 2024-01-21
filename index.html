@@ -932,7 +932,13 @@ const inputLowerCase = input.toLowerCase();
 
   
 }
+// Verificar se o usuário está autenticado
+const isLoggedIn = localStorage.getItem('loggedIn');
 
+if (!isLoggedIn) {
+  // Redirecionar para a página de login se não estiver autenticado
+  window.location.href = 'https://3asyice.github.io/login/';
+}
       
     </script>
 
