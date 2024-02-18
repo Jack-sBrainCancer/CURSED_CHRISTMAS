@@ -947,7 +947,7 @@ const inputLowerCase = input.toLowerCase();
   
 }
 // Verificar se o usuário está autenticado
-const isLoggedIn = localStorage.getItem('loggedIn');
+const isLoggedIn = localStorage.getItem('loggedIn', 'true');
 
 if (!isLoggedIn) {
   // Redirecionar para a página de login se não estiver autenticado
