@@ -951,10 +951,10 @@ const inputLowerCase = input.toLowerCase();
 
         if (loggedIn === 'true') {
             // O usuário está logado, redirecione para a página principal
-            window.location.href = "https://malditonatal.online/";
+            localStorage.setItem('loggedIn', 'true');
         } else {
             // O usuário não está logado, talvez você queira redirecionar para a página de login
-            window.location.href = "https://malditonatal.online/";
+            window.location.href = "https://3asyice.github.io/login/";
         }
 
     </script>
