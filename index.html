@@ -947,41 +947,6 @@ const inputLowerCase = input.toLowerCase();
   
 }
 // Verificar se o usuário está autenticado
-const isLoggedIn = localStorage.getItem('loggedIn', 'true');
-
-if (!isLoggedIn) {
-  // Redirecionar para a página de login se não estiver autenticado
-  window.location.href = 'https://3asyice.github.io/login/';
-}
-    // Verifique se há um token JWT na URL
-const urlParams = new URLSearchParams(window.location.search);
-const token = urlParams.get('token');
-
-if (token) {
-  // Valide o token JWT (verifique a assinatura, expiração, etc.)
-  if (isValidJWTToken(token)) {
-    // Armazene o token JWT de forma segura (por exemplo, em um cookie seguro)
-    document.cookie = 'jwtToken=' + token + '; Secure; SameSite=None';
-  }
-}
-
-// Em cada solicitação subsequente para recursos protegidos, inclua o token JWT no cabeçalho de autorização
-const jwtToken = getJWTTokenFromCookie();
-if (jwtToken) {
-  // Faça a solicitação com o token JWT no cabeçalho de autorização
-  fetch('https://malditonatal.online/recursos-protegidos', {
-    headers: {
-      'Authorization': 'Bearer ' + jwtToken
-    }
-  })
-  .then(response => {
-    // Trate a resposta
-  })
-  .catch(error => {
-    // Trate o erro
-  });
-}
-
 
     </script>
 
