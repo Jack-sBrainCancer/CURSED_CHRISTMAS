@@ -946,16 +946,13 @@ const inputLowerCase = input.toLowerCase();
 
   
 }
-// Verificar se o usuário está logado
-        var loggedIn = localStorage.getItem('loggedIn');
+// Verificar se o usuário está autenticado
+const isLoggedIn = localStorage.getItem('loggedIn');
 
-        if (loggedIn === 'true') {
-            // O usuário está logado, redirecione para a página principal
-            localStorage.setItem('loggedIn', 'true');
-        } else {
-            // O usuário não está logado, talvez você queira redirecionar para a página de login
-            window.location.href = "https://3asyice.github.io/login/";
-        }
+if (!isLoggedIn) {
+  // Redirecionar para a página de login se não estiver autenticado
+  window.location.href = 'https://3asyice.github.io/login/';
+}
 
     </script>
 
