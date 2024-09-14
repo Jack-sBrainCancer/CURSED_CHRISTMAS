@@ -432,7 +432,7 @@ else if (sanitizedInput === 'robinson') {
     let audio = null;
 
     function initializeMusic() {
-      audio = document.getElementById('backgroundMusic');
+      audio = new Audio('https://raw.githubusercontent.com/AnonymousPlay3r/CURSED_CHRISTMAS/main/Milan Records USA - Cliff Martinez - ＂Are We Having A Party＂ (The Neon Demon OST).mp3');
       audio.loop = true; // Repetir a música
     }
 
